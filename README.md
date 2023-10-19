@@ -1,2 +1,2 @@
 # Student-Housing-SpringBoot
-Student Housing Management System Using Spring Boot
+This repository houses a student housing management system built with Spring Boot, designed to streamline and simplify the management of student accommodations.It started with my journey in learning Spring boot basics for futur projects. It will includes in the futur features such as user registration, room allocation, billing, and more. This project serves as a practical example of Spring Boot application development for educational purposes.
