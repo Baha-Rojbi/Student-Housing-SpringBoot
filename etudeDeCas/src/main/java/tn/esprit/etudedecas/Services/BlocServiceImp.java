@@ -35,4 +35,14 @@ public class BlocServiceImp implements IBlocService{
     public void deleteBlocByID(long idBloc) {
         blocRepositories.deleteById(idBloc);
     }
+
+    @Override
+    public Bloc addBlocAndAssignToFoyer(Bloc bloc, Long idFoyer) {
+        return null;
+    }
+
+    @Override
+    public Bloc addBlocAndAssignToChambre(Bloc b, Long idChambre) {
+        return null;
+    }
 }
