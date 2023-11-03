@@ -31,4 +31,8 @@ public class BlocRestController {
     public void deleteBlocById(@PathVariable Long idBloc){
         iBlocService.deleteBlocByID(idBloc);
     }
+    @PostMapping("addBlocAndAssignToFoyer/{idFoyer}")
+    public Bloc addBlocAndAssignToFoyer(@RequestBody Bloc bloc,@PathVariable Long idFoyer){
+        return iBlocService.addBlocAndAssignToFoyer(bloc,idFoyer);
+    }
 }

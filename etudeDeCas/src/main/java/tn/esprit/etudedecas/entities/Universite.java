@@ -18,7 +18,7 @@ public class Universite implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idUniversite ;
     private String nomUniversite ;
-    private Long adresse ;
+    private String adresse ;
     @OneToOne
     private Foyer foyer;
 }

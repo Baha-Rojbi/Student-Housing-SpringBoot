@@ -10,6 +10,6 @@ public interface IBlocService {
     public List<Bloc> getAllBloc();
     public Bloc getBlocByID(long idBloc);
     public void deleteBlocByID(long idBloc);
-    Bloc addBlocAndAssignToFoyer(Bloc bloc, Long idFoyer);
-    Bloc addBlocAndAssignToChambre(Bloc b, Long idChambre);
+    public Bloc addBlocAndAssignToFoyer(Bloc bloc, Long idFoyer);
+    public Bloc addBlocAndAssignToChambre(Bloc b, Long idChambre);
 }

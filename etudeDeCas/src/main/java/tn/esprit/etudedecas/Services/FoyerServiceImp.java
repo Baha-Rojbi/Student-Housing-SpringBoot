@@ -43,7 +43,7 @@ public class FoyerServiceImp implements IFoyerService{
     @Override
     public Foyer addFoyerAndAssignToUniversity(Foyer f, Long idUniver) {
         Universite universite=universiteRepositories.findById(idUniver).orElse(null);
-        f.setUniversite(universite);
+        universite.setFoyer(f);
         return foyerRepositories.save(f);
     }
 }

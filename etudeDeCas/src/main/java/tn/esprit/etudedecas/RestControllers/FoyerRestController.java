@@ -33,4 +33,8 @@ return iFoyerService.getFoyerById(idF);
     public void deleteFoyer(@PathVariable long idF){
         iFoyerService.deleteFoyer(idF);
     }
+    @PostMapping("addFoyerAndAssignToUniversity/{idUniver}")
+    Foyer addFoyerAndAssignToUniversity(@RequestBody Foyer f,@PathVariable Long idUniver){
+        return iFoyerService.addFoyerAndAssignToUniversity(f,idUniver);
+    }
 }

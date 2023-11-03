@@ -3,13 +3,16 @@ package tn.esprit.etudedecas.Services;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import tn.esprit.etudedecas.Repositories.BlocRepositories;
+import tn.esprit.etudedecas.Repositories.FoyerRepositories;
 import tn.esprit.etudedecas.entities.Bloc;
+import tn.esprit.etudedecas.entities.Foyer;
 
 import java.util.List;
 @Service
 @AllArgsConstructor
 public class BlocServiceImp implements IBlocService{
     public BlocRepositories blocRepositories;
+    public FoyerRepositories foyerRepositories;
 
     @Override
     public Bloc addBloc(Bloc bloc) {
@@ -38,7 +41,9 @@ public class BlocServiceImp implements IBlocService{
 
     @Override
     public Bloc addBlocAndAssignToFoyer(Bloc bloc, Long idFoyer) {
-        return null;
+        Foyer foyer=foyerRepositories.findById(idFoyer).orElse(null);
+        bloc.setFoyer(foyer);
+        return blocRepositories.save(bloc);
     }
 
     @Override
