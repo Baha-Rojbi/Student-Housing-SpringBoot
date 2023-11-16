@@ -21,11 +21,15 @@ public class ChambreRestController {
        return iChambreService.getAllChambre();
     }
     @GetMapping("/getChambreById/{idChambre}")
-    public Chambre getChambreById(Long idChambre){
+    public Chambre getChambreById(@PathVariable Long idChambre){
        return iChambreService.getChambreById(idChambre);
     }
     @DeleteMapping("/deleteChambre/{idChambre}")
-    public void deleteChambre(Long idChambre){
+    public void deleteChambre(@PathVariable Long idChambre){
         iChambreService.deleteChambre(idChambre);
+    }
+    @PostMapping("addChambreAndAssingToBloc/{idBloc}")
+    public Chambre addChambreAndAssingToBloc(@RequestBody Chambre chambre,@PathVariable Long idBloc){
+        return iChambreService.addChambreAndAssingToBloc(chambre,idBloc);
     }
 }

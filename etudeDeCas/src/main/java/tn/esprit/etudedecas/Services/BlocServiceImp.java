@@ -45,8 +45,5 @@ public class BlocServiceImp implements IBlocService{
         bloc.setFoyer(foyer);
         return blocRepositories.save(bloc);
     }
-    @Override
-    public Bloc addBlocAndAssignToChambre(Bloc b, Long idChambre) {
-        return null;
-    }
+   
 }

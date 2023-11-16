@@ -36,4 +36,5 @@ public class BlocRestController {
         return iBlocService.addBlocAndAssignToFoyer(bloc,idFoyer);
     }
 
+
 }
