@@ -12,5 +12,7 @@ public interface IBlocService {
     public Bloc getBlocByID(long idBloc);
     public void deleteBlocByID(long idBloc);
     public Bloc addBlocAndAssignToFoyer(Bloc bloc, Long idFoyer);
+    public Bloc getBlocbyIdChambre(Long idChambre);
+
 
 }

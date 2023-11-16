@@ -5,8 +5,12 @@ import org.springframework.stereotype.Service;
 import tn.esprit.etudedecas.Repositories.BlocRepositories;
 import tn.esprit.etudedecas.Repositories.FoyerRepositories;
 import tn.esprit.etudedecas.entities.Bloc;
+import tn.esprit.etudedecas.entities.Chambre;
 import tn.esprit.etudedecas.entities.Foyer;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 @Service
 @AllArgsConstructor
@@ -45,5 +49,11 @@ public class BlocServiceImp implements IBlocService{
         bloc.setFoyer(foyer);
         return blocRepositories.save(bloc);
     }
-   
+
+    @Override
+    public Bloc getBlocbyIdChambre(Long idChambre) {
+        return blocRepositories.findByChambresIdChambre(idChambre);
+    }
+
+
 }

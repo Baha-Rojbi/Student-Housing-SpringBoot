@@ -12,4 +12,6 @@ public interface IChambreService {
     public Chambre getChambreById(Long idChambre);
     public void deleteChambre(Long idChambre);
     public Chambre addChambreAndAssingToBloc(Chambre chambre, Long idBloc);
+    public List<Chambre> getChambresByBloc(Long idBloc);
+
 }

@@ -45,4 +45,9 @@ public class ChambreServiceImp implements IChambreService{
         chambre.setBloc(bloc);
         return chambreRepositories.save(chambre);
     }
+    @Override
+    public List<Chambre> getChambresByBloc(Long idBloc) {
+        return chambreRepositories.findByBlocIdBloc(idBloc);
+    }
+
 }

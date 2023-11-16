@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import tn.esprit.etudedecas.Services.IBlocService;
 import tn.esprit.etudedecas.entities.Bloc;
+import tn.esprit.etudedecas.entities.Chambre;
 
 import java.util.List;
 
@@ -34,6 +35,10 @@ public class BlocRestController {
     @PostMapping("addBlocAndAssignToFoyer/{idFoyer}")
     public Bloc addBlocAndAssignToFoyer(@RequestBody Bloc bloc,@PathVariable Long idFoyer){
         return iBlocService.addBlocAndAssignToFoyer(bloc,idFoyer);
+    }
+    @GetMapping("getBlocbyIdChambre/{idBloc}")
+    public Bloc getBlocbyIdChambre(@PathVariable Long idBloc){
+        return iBlocService.getBlocbyIdChambre(idBloc);
     }
 
 

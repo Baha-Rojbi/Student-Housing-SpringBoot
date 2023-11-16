@@ -14,4 +14,6 @@ public interface IEtudiantService {
     public void deleteEtudiant(long idE);
     public List<Etudiant> getByNom(String nom);
     public List<Etudiant> findByDateNaissanceBetween(Date dateDebut,Date dateFin);
+
+
 }

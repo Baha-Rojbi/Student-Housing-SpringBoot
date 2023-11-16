@@ -46,4 +46,5 @@ public EtudiantRepositories etudiantRepositories;
     public List<Etudiant> findByDateNaissanceBetween(Date dateDebut, Date dateFin) {
         return etudiantRepositories.findByDateNaissanceBetween(dateDebut,dateFin);
     }
+
 }

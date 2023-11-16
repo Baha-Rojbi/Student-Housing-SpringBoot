@@ -3,6 +3,7 @@ package tn.esprit.etudedecas.RestControllers;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import tn.esprit.etudedecas.Services.IChambreService;
+import tn.esprit.etudedecas.entities.Bloc;
 import tn.esprit.etudedecas.entities.Chambre;
 
 import java.util.List;
@@ -31,5 +32,9 @@ public class ChambreRestController {
     @PostMapping("addChambreAndAssingToBloc/{idBloc}")
     public Chambre addChambreAndAssingToBloc(@RequestBody Chambre chambre,@PathVariable Long idBloc){
         return iChambreService.addChambreAndAssingToBloc(chambre,idBloc);
+    }
+    @GetMapping("/getChambresByBloc/{idBloc}")
+    public List<Chambre> getChambresByBloc(@PathVariable Long idBloc) {
+        return iChambreService.getChambresByBloc(idBloc);
     }
 }
