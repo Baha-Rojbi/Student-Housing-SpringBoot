@@ -35,4 +35,5 @@ public class BlocRestController {
     public Bloc addBlocAndAssignToFoyer(@RequestBody Bloc bloc,@PathVariable Long idFoyer){
         return iBlocService.addBlocAndAssignToFoyer(bloc,idFoyer);
     }
+
 }
