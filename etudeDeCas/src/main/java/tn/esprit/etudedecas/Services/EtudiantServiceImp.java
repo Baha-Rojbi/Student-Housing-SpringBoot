@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import tn.esprit.etudedecas.Repositories.EtudiantRepositories;
 import tn.esprit.etudedecas.entities.Etudiant;
 
+import java.util.Date;
 import java.util.List;
 @Service
 @AllArgsConstructor
@@ -34,5 +35,15 @@ public EtudiantRepositories etudiantRepositories;
     @Override
     public void deleteEtudiant(long idE) {
         etudiantRepositories.deleteById(idE);
+    }
+
+    @Override
+    public List<Etudiant> getByNom(String nom) {
+        return etudiantRepositories.getEtudiantByNom(nom);
+    }
+
+    @Override
+    public List<Etudiant> findByDateNaissanceBetween(Date dateDebut, Date dateFin) {
+        return etudiantRepositories.findByDateNaissanceBetween(dateDebut,dateFin);
     }
 }
