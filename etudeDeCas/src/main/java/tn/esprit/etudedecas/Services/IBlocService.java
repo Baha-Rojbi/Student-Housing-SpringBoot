@@ -13,6 +13,7 @@ public interface IBlocService {
     public void deleteBlocByID(long idBloc);
     public Bloc addBlocAndAssignToFoyer(Bloc bloc, Long idFoyer);
     public Bloc getBlocbyIdChambre(Long idChambre);
+    public Bloc affecterChambresABloc(List<Long> numChambre,long idBloc);
 
 
 }

@@ -20,4 +20,8 @@ public class UniversiteRestController {
     public Universite affecterFoyerAUniversite(@PathVariable long idFoyer,@PathVariable String nomUniversite){
         return iUniversiteService.affecterFoyerAUniversite(idFoyer,nomUniversite);
     }
+    @PostMapping("desaffecterFoyerAUniversite/{idUniversite}")
+    public Universite desaffecterFoyerAUniversite(@PathVariable long idUniversite){
+        return iUniversiteService.desaffecterFoyerAUniversite(idUniversite);
+    }
 }

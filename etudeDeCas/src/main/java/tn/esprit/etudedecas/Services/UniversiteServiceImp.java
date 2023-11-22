@@ -1,6 +1,7 @@
 package tn.esprit.etudedecas.Services;
 
 import lombok.AllArgsConstructor;
+import org.springframework.expression.spel.ast.NullLiteral;
 import org.springframework.stereotype.Service;
 import tn.esprit.etudedecas.Repositories.FoyerRepositories;
 import tn.esprit.etudedecas.Repositories.UniversiteRepositories;
@@ -22,6 +23,13 @@ public class UniversiteServiceImp implements IUniversiteService{
         Universite universite=universiteRepositories.findByNomUniversite(nomUniversite);
         Foyer foyer=foyerRepositories.findById(idFoyer).orElse(null);
         universite.setFoyer(foyer);
+        return universiteRepositories.save(universite);
+    }
+
+    @Override
+    public Universite desaffecterFoyerAUniversite(long idUniversite) {
+        Universite universite=universiteRepositories.findById(idUniversite).orElse(null);
+        universite.setFoyer(null);
         return universiteRepositories.save(universite);
     }
 }
