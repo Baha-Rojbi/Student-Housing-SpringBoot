@@ -1,22 +1,23 @@
 package tn.esprit.etudedecas.Services;
 
+import jakarta.persistence.EntityNotFoundException;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import tn.esprit.etudedecas.Repositories.BlocRepositories;
+import tn.esprit.etudedecas.Repositories.ChambreRepositories;
 import tn.esprit.etudedecas.Repositories.FoyerRepositories;
 import tn.esprit.etudedecas.entities.Bloc;
 import tn.esprit.etudedecas.entities.Chambre;
 import tn.esprit.etudedecas.entities.Foyer;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
+
 @Service
 @AllArgsConstructor
 public class BlocServiceImp implements IBlocService{
     public BlocRepositories blocRepositories;
     public FoyerRepositories foyerRepositories;
+    public ChambreRepositories chambreRepositories;
 
     @Override
     public Bloc addBloc(Bloc bloc) {
@@ -53,6 +54,18 @@ public class BlocServiceImp implements IBlocService{
     @Override
     public Bloc getBlocbyIdChambre(Long idChambre) {
         return blocRepositories.findByChambresIdChambre(idChambre);
+    }
+
+    @Override
+    public Bloc affecterChambresABloc(List<Long> numChambre, long idBloc) {
+        Bloc bloc=blocRepositories.findById(idBloc).orElse(null);
+        List<Chambre> chambres=chambreRepositories.findAllById(numChambre);
+        Set<Chambre> chambreSet = new HashSet<>(chambres);
+        bloc.setChambres(chambreSet);
+        for (Chambre chambre : chambreSet) {
+            chambre.setBloc(bloc);
+        }
+        return blocRepositories.save(bloc);
     }
 
 
